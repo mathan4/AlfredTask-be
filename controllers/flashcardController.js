@@ -43,7 +43,7 @@ const getAllDueFlashCard = async (request, response) => {
     const dueFlashCards = await FlashcardModel.find({
       nextReviewDate: { $lte: today },
     });
-    if (dueFlashCards === 0) {
+    if (dueFlashCards.length === 0) {
       return response.status(200).json({ message: "No Flash Card Due" });
     } else {
       return response.status(200).send(dueFlashCards);
