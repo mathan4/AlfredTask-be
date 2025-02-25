@@ -12,13 +12,9 @@ const db = mongoose.connection
 db.on('error', (errorMessage) => console.log(errorMessage))
 db.once('open', () => console.log(`Connected successfully to database`))
 
-const corsOptions = {
-  origin: 'https://alfred-task-fe.vercel.app',
-  methods: 'GET,POST,PUT,DELETE',
-  credentials: true,
-};
 
-app.use(cors(corsOptions));
+
+app.use(cors());
 app.use(express.json())
 
 app.use('/api/v1/leitner',FlashcardRouter)
