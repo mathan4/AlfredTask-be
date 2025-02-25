@@ -99,7 +99,7 @@ const deleteFlashCard=async(request,response)=>{
   try {
     const flashcard=await FlashcardModel.findByIdAndDelete(id);
     if (!flashcard) {
-      return res.status(404).json({ message: 'Flashcard not found' });
+      return response.status(404).json({ message: 'Flashcard not found' });
     }
     return response.status(200).json({message:"Successfully deleted",flashcard})
     
