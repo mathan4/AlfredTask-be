@@ -1,4 +1,4 @@
-const datas=require('../data/initialData');
+
 const flashcardModel = require('../models/flashcardModel');
 const FlashcardModel = require('../models/flashcardModel');
 
