@@ -1,7 +1,8 @@
 require("dotenv").config()
 const express=require('express')
 const app=express()
-const PORT=3500
+const PORT = process.env.PORT || 3500;
+
 const FlashcardRouter=require('./routes/flashcardRouter')
 
 const mongoose = require('mongoose')
